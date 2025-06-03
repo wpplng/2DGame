@@ -1,6 +1,8 @@
-﻿namespace _2DGame.LimitedList;
+﻿using System.Collections;
 
-public class LimitedList<T> 
+namespace _2DGame.LimitedList;
+
+public class LimitedList<T> : IEnumerable<T>
 {
     private readonly int _capacity;
     private List<T> _list;
@@ -19,4 +21,15 @@ public class LimitedList<T>
         if (IsFull) return false;
         _list.Add(item); return true;
     }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+        foreach (var item in _list)
+        {
+           yield return item;
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
 }
