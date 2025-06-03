@@ -1,4 +1,4 @@
-﻿using _2DGame.ConsoleGame;
+﻿using _2DGame.ConsoleGame.GameWorld;
 using System.Diagnostics;
 
 internal class Map

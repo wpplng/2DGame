@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2DGame.ConsoleGame
+namespace _2DGame.ConsoleGame.GameWorld
 {
     internal class Direction
     {

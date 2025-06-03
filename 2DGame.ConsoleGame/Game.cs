@@ -1,8 +1,5 @@
-﻿
-
-
-using _2DGame.ConsoleGame;
-using _2DGame.ConsoleGame.Extensions;
+﻿using _2DGame.ConsoleGame.Extensions;
+using _2DGame.ConsoleGame.GameWorld;
 using System.ComponentModel;
 
 internal class Game
