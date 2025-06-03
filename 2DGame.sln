@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36121.58 d17.14
+VisualStudioVersion = 17.14.36121.58
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2DGame.ConsoleGame", "2DGame.ConsoleGame\2DGame.ConsoleGame.csproj", "{370174D8-D575-4ACC-8693-76058594DC25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2DGame.LimitedList", "2DGame.LimitedList\2DGame.LimitedList.csproj", "{423FB09D-AB79-4BE8-9CB6-1CDC9DA69A09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +19,17 @@ Global
 		{370174D8-D575-4ACC-8693-76058594DC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{370174D8-D575-4ACC-8693-76058594DC25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{370174D8-D575-4ACC-8693-76058594DC25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{423FB09D-AB79-4BE8-9CB6-1CDC9DA69A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{423FB09D-AB79-4BE8-9CB6-1CDC9DA69A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{423FB09D-AB79-4BE8-9CB6-1CDC9DA69A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{423FB09D-AB79-4BE8-9CB6-1CDC9DA69A09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{370174D8-D575-4ACC-8693-76058594DC25} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{423FB09D-AB79-4BE8-9CB6-1CDC9DA69A09} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7963FF36-C4C0-4968-911F-ED38BC1F3936}
