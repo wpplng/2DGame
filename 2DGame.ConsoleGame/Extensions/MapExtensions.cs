@@ -8,13 +8,13 @@ namespace _2DGame.ConsoleGame.Extensions;
 
 internal static class MapExtensions
 {
-    public static IDrawable CreatureAt(this List<Creature> creatures, Cell cell)
+    public static IDrawable? CreatureAt(this List<Creature> creatures, Cell cell)
     {
-        IDrawable result = cell;
+        IDrawable? result = null;
 
         foreach (Creature creature in creatures)
         {
-            if (creature.Cell == result)
+            if (creature.Cell == cell)
             {
                 result = creature;
                 break;

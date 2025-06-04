@@ -1,11 +1,12 @@
-﻿using _2DGame.ConsoleGame.Extensions;
+﻿using _2DGame.ConsoleGame;
+using _2DGame.ConsoleGame.Extensions;
 using _2DGame.ConsoleGame.GameWorld;
 using System.ComponentModel;
 
 internal class Game
 {
     private Map _map = null!;
-    private Creature _player = null!;
+    private Player _player = null!;
 
     public Game()
     {
@@ -62,6 +63,26 @@ internal class Game
             case ConsoleKey.RightArrow:
                 Move(Direction.East);
                 break;
+            case ConsoleKey.P:
+                PickUp();
+                break;
+        }
+    }
+
+    private void PickUp()
+    {
+        if(_player.BackPack.IsFull)
+        {
+            Console.WriteLine("Backpack is full, cannot pick up item.");
+            return;
+        }
+        var items = _player.Cell.Items;
+        var item = items.FirstOrDefault();
+        if (item is null) return;
+        if (_player.BackPack.Add(item))
+        {
+            Console.WriteLine($"Picked up {item}.");
+            items.Remove(item);
         }
     }
 
@@ -85,5 +106,10 @@ internal class Game
         Cell? playerCell = _map.GetCell(0, 0);
         _player = new Player(playerCell!);
         _map.Creatures.Add(_player);
+
+        _map.GetCell(2, 6)?.Items.Add(Item.Coin());
+        _map.GetCell(3, 3)?.Items.Add(Item.Stone());
+        _map.GetCell(1, 4)?.Items.Add(Item.Coin());
+        _map.GetCell(2, 2)?.Items.Add(Item.Stone());
     }
 }
