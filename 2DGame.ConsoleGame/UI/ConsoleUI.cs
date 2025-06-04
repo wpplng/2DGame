@@ -4,7 +4,7 @@ using _2DGame.ConsoleGame.Extensions;
 
 internal class ConsoleUI
 {
-    internal static void Draw(Map map)
+    internal static void Draw(IMap map)
     {
         for (int y = 0; y < map.Height; y++)
         {
