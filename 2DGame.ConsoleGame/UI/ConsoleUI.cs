@@ -1,9 +1,19 @@
 ﻿
 
 using _2DGame.ConsoleGame.Extensions;
+using _2DGame.LimitedList;
 
 internal class ConsoleUI
 {
+    private static MessageLog<string> _messageLog = new(6);
+
+    internal static void AddMessage(string message) => _messageLog.Add(message);
+
+    // hade egentligen kunnat loopa och skriva ut loggen direkt
+    internal static void PrintLog()
+    {
+        _messageLog.Print(m => Console.WriteLine(m));
+    }
     internal static void Draw(IMap map)
     {
         for (int y = 0; y < map.Height; y++)
