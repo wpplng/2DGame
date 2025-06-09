@@ -73,7 +73,7 @@ internal class Game
     {
         if(_player.BackPack.IsFull)
         {
-            Console.WriteLine("Backpack is full, cannot pick up item.");
+            ConsoleUI.AddMessage("Backpack is full, cannot pick up item.");
             return;
         }
         var items = _player.Cell.Items;
@@ -81,7 +81,7 @@ internal class Game
         if (item is null) return;
         if (_player.BackPack.Add(item))
         {
-            Console.WriteLine($"Picked up {item}.");
+            ConsoleUI.AddMessage($"Picked up {item}.");
             items.Remove(item);
         }
     }
@@ -95,8 +95,9 @@ internal class Game
 
     private void Drawmap()
     {
-        Console.Clear();
+        ConsoleUI.Clear();
         ConsoleUI.Draw(_map);
+        ConsoleUI.PrintLog();
     }
 
     private void Init()

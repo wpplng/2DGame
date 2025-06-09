@@ -12,7 +12,7 @@ internal class ConsoleUI
     // hade egentligen kunnat loopa och skriva ut loggen direkt
     internal static void PrintLog()
     {
-        _messageLog.Print(m => Console.WriteLine(m));
+        _messageLog.Print(m => Console.WriteLine(m + new string(' ', Console.WindowWidth - m.Length)));
     }
     internal static void Draw(IMap map)
     {
@@ -35,4 +35,9 @@ internal class ConsoleUI
 
     internal static ConsoleKey GetKey() => Console.ReadKey(intercept: true).Key;
 
+    internal static void Clear()
+    {
+        Console.CursorVisible = false;
+        Console.SetCursorPosition(0, 0);
+    }
 }
