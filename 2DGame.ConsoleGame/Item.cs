@@ -23,7 +23,7 @@ namespace _2DGame.ConsoleGame
         }
         public override string ToString() => _name;
 
-        public static Item Coin() => new Item("c ", ConsoleColor.Yellow, "Coin");
-        public static Item Stone() => new Item("s ", ConsoleColor.Gray, "Stone");
+        public static Item Coin() => new Item("c ", ConsoleColor.Yellow, "coin");
+        public static Item Stone() => new Item("s ", ConsoleColor.Gray, "stone");
     }
 }
