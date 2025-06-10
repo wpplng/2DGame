@@ -1,12 +1,14 @@
 ﻿using _2DGame.ConsoleGame;
 using _2DGame.ConsoleGame.Extensions;
 using _2DGame.ConsoleGame.GameWorld;
+using System;
 using System.ComponentModel;
 
 internal class Game
 {
     private Map _map = null!;
     private Player _player = null!;
+    private Dictionary<ConsoleKey, Action> actionmeny = null!;
 
     public Game()
     {
@@ -63,12 +65,16 @@ internal class Game
             case ConsoleKey.RightArrow:
                 Move(Direction.East);
                 break;
-            case ConsoleKey.P:
-                PickUp();
-                break;
-            case ConsoleKey.I:
-                Inventory();
-                break;
+            //case ConsoleKey.P:
+            //    PickUp();
+            //    break;
+            //case ConsoleKey.I:
+            //    Inventory();
+            //    break;
+        }
+        if (actionmeny.ContainsKey(keypressed))
+        {
+            actionmeny[keypressed].Invoke();
         }
     }
 
@@ -114,8 +120,9 @@ internal class Game
 
     private void Init()
     {
+        CreateActionMeny();
         // ToDo: read from config file
-        _map = new Map(height: 10,  width: 10);
+        _map = new Map(height: 10, width: 10);
         Cell? playerCell = _map.GetCell(0, 0);
         _player = new Player(playerCell!);
         _map.Creatures.Add(_player);
@@ -124,5 +131,16 @@ internal class Game
         _map.GetCell(3, 3)?.Items.Add(Item.Stone());
         _map.GetCell(1, 4)?.Items.Add(Item.Coin());
         _map.GetCell(2, 2)?.Items.Add(Item.Stone());
+
     }
+
+        private void CreateActionMeny()
+        {
+            actionmeny = new Dictionary<ConsoleKey, Action>()
+            {
+                { ConsoleKey.P, PickUp    },
+                { ConsoleKey.I, Inventory }
+            };
+        }
+    
 }
